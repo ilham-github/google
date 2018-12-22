@@ -6,5 +6,46 @@
 
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
-  <button ion-button (click)="login()">login by Google</button>
+  <button ion-button block  (click)="loginUser()" *ngIf="!userProfile"class="myBtn btnMargin " id="googleLogin">تسجيل بواسطة جيميل
+    <ion-icon name="logo-google" class="icon"></ion-icon>
+  </button>
+  <!-- <button ion-button (click)="logout()" *ngIf="!loggedIn">مع السلامة</button>  -->
+  <!-- <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{imageUrl}}">
+      </ion-avatar>
+      <h2>{{displayName}}</h2>
+       <h2>{{familyName}}</h2> 
+       <h2>{{userId}}</h2> 
+        
+       <h2> {{email}}</h2>
+      
+    </ion-item>
+  </ion-list> -->
+  <!-- <ion-item *ngIf="userProfile">
+    <ion-avatar item-left>
+      <img [src]="userProfile.photoURL">
+    </ion-avatar>
+    <h2>{{ userProfile.displayName }}</h2>
+    <h3>{{ userProfile.email }}</h3>
+  </ion-item> -->
+  <ion-item>
+    <ion-label>الكلية</ion-label>
+    <ion-select [(ngModel)]="collage">
+      <ion-option value="eng">الهندسة</ion-option>
+      <ion-option value="trbeea">التربية</ion-option>
+      <ion-option value="medicin">الطب</ion-option>
+      <ion-option value="sience">العلوم</ion-option>
+      
+    </ion-select>
+    <ion-select [(ngModel)]="dep">
+      <ion-option value="civile">المدني </ion-option>
+      <ion-option value="elect">الكهرباء</ion-option>
+      <ion-option value="history">التاريخ</ion-option>
+      <ion-option value="chemecal">الكيمياء</ion-option>
+      <ion-option value="bio">حياة</ion-option>
+      <ion-option value="jeo">جيلوجيا</ion-option>
+    </ion-select>
+  </ion-item>
 </ion-content>
